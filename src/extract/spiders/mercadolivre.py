@@ -1,6 +1,5 @@
 import scrapy
 
-
 class MercadolivreSpider(scrapy.Spider):
     name = "mercadolivre"
     allowed_domains = ["lista.mercadolivre.com.br"]
@@ -16,7 +15,7 @@ class MercadolivreSpider(scrapy.Spider):
                 'preco': manga.css('span.andes-money-amount__fraction::text').get(),
                 'preco_centavos': manga.css('span.andes-money-amount__cents::text').get(),
                 'avaliacao': manga.css('span.ui-search-reviews__rating-number::text').get(),
-                'avaliacao-quantidade': manga.css('span.ui-search-reviews__amount::text').get()
+                'avaliacao_quantidade': manga.css('span.ui-search-reviews__amount::text').get()
                 }
         if self.page_count < self.max_pages:
             next_page = response.css('li.andes-pagination__button.andes-pagination__button--next a::attr(href)').get()
