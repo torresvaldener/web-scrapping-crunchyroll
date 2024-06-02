@@ -1,1 +1,1 @@
-# web-scrapping-panini
+# web-scrapping-crunchyroll
